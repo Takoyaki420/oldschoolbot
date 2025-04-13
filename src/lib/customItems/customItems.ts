@@ -14077,3 +14077,29 @@ setCustomItem(
 	},
 	200_000_000
 );
+
+setCustomItem(
+	73_376,
+	'Tuah',
+	'Herbi',
+	{
+		customItemData: {
+			cantDropFromMysteryBoxes: true,
+			isSuperUntradeable: true
+		}
+	},
+	200_000_000
+);
+
+setCustomItem(
+	73_377,
+	'Burnie',
+	'Herbi',
+	{
+		customItemData: {
+			cantDropFromMysteryBoxes: true,
+			isSuperUntradeable: true
+		}
+	},
+	200_000_000
+);

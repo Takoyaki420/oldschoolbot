@@ -1,3 +1,4 @@
+import { BURNIE_DROPRATE_PER_ROLL, XP_PER_BURNIE_ROLL } from '../bso/burnie.js';
 import getOSItem from '../util/getOSItem';
 import { itemNameFromID } from '../util/smallUtils';
 import { doaMetamorphPets } from './CollectionsExport';
@@ -125,5 +126,14 @@ export const globalDroprates = {
 		rolledPer: 'harvest',
 		notes: ['Received from harvesting any planted zygomite'],
 		item: getOSItem('Fungo')
+	},
+	burnie: {
+		name: 'Burnie (pet)',
+		baseRate: BURNIE_DROPRATE_PER_ROLL,
+		minLength: false,
+		clIncrease: 1.5,
+		rolledPer: `${XP_PER_BURNIE_ROLL} XP`,
+		notes: ['Received from smithing/smelting training'],
+		item: getOSItem('Burnie')
 	}
 };

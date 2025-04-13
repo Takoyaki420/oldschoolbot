@@ -1,8 +1,9 @@
 import { Time, percentChance } from 'e';
 import { Bank } from 'oldschooljs';
 
+import { rollBurnie } from '../../lib/bso/burnie.js';
 import { BlacksmithOutfit } from '../../lib/bsoOpenables';
-import { MIN_LENGTH_FOR_PET } from '../../lib/constants';
+import { Events, MIN_LENGTH_FOR_PET } from '../../lib/constants';
 import { globalDroprates } from '../../lib/data/globalDroprates';
 import Smithing from '../../lib/skilling/skills/smithing';
 import { SkillsEnum } from '../../lib/skilling/types';
@@ -47,19 +48,20 @@ export const smeltingTask: MinionTask = {
 		});
 
 		let str = `${user}, ${user.minionName} finished smelting ${quantity}x ${bar.name}. ${xpRes}`;
+		const messages: string[] = [];
 
 		if (bar.chanceOfFail > 0 && oldQuantity > quantity) {
-			str += `\n\n${oldQuantity - quantity} ${bar.name}s failed to smelt.`;
+			messages.push(`${oldQuantity - quantity} ${bar.name}s failed to smelt.`);
 		}
 
 		if (masterCapeInEffect) {
 			if (!(blastf && bar.id === itemID('Iron bar'))) {
-				str += '\n2x less likely to fail from Smithing master cape.';
+				messages.push('2x less likely to fail from Smithing master cape.');
 			}
 		}
 
 		if (hasBS) {
-			str += '\n10% more XP for owning the blacksmith outfit.';
+			messages.push('10% more XP for owning the blacksmith outfit.');
 		}
 
 		const loot = new Bank({
@@ -76,13 +78,23 @@ export const smeltingTask: MinionTask = {
 			);
 			for (let i = 0; i < numMinutes; i++) {
 				if (roll(petChance)) {
-					str +=
-						'\n\n<:zak:751035589952012298> While Smelting ores on Neitiznot, a Yak approaches you and says "Moooo". and is now following you around. You decide to name him \'Zak\'.';
+					messages.push(
+						'<:zak:751035589952012298> While Smelting ores on Neitiznot, a Yak approaches you and says "Moooo". and is now following you around. You decide to name him \'Zak\'.'
+					);
 					loot.add('Zak');
 					break;
 				}
 			}
 		}
+
+		rollBurnie({ smithingXpReceived: xpReceived, bank: loot, messages, totalSmithingXp: user.skillsAsXP.smithing });
+
+		if (loot.has('Burnie')) {
+			messages.push('You received a Burnie pet!');
+			globalClient.emit(Events.ServerNotification, `**${user.badgedUsername}** just received the Burnie pet!`);
+		}
+
+		if (messages.length > 0) str += `\n\n${messages.join(' ')}`;
 
 		await transactItems({
 			userID: user.id,

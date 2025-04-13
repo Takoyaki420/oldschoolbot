@@ -1,5 +1,5 @@
 import type { activity_type_enum } from '@prisma/client';
-import { Time, calcPercentOfNum, calcWhatPercent } from 'e';
+import { Time, calcPercentOfNum, calcWhatPercent, increaseNumByPercent } from 'e';
 
 import { BitField, PerkTier } from '../constants';
 import { SkillsEnum } from '../skilling/types';
@@ -73,6 +73,12 @@ export function calcMaxTripLength(user: MUser, activity?: activity_type_enum) {
 		}
 		case 'NightmareZone': {
 			max *= 3;
+			break;
+		}
+		case 'Smithing': {
+			if (user.usingPet('Burnie')) {
+				max = increaseNumByPercent(max, 10);
+			}
 			break;
 		}
 		default: {

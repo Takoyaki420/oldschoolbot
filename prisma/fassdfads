@@ -1,0 +1,13 @@
+Burnie pet
+- Dropped from smithing/smelting trips, you get 1 roll per 1k smithing xp received, the current rate is set so it takes 200 hours to get one (this number is changeable, just a random number to start with) - so you can get it from any smithing training method.
+- Users with 5b smithing xp have a 30% more common droprate.
+
+Perks:
+- When you receive vanilla osrs ores (iron-runite) on any trip (e.g. mining or pvm), he smelts them into bars (same xp/coal required as osrs), or atleast as many as he has time to. You get awarded XP.
+- When doing any trip, burnie smelts down metal items in your bank back into bars at 30% efficiency. e.g. you would need to smelt down 4 rune swords to get 1 rune bar back. You also get the smithing xp of smelting that bar, which is small (but you get the bar back which itself becomes XP). It will use the best items you have in your bank (e.g. starting with rune items). I could make the items configurable like favalch if thats necessary. 
+- 10% longer smelting trips, 10% faster smithing trips
+
+
+I think this could be a potentially good pet for irons, and less so for mains I presume. My goal is for it to provide a good enough benefit that people will use it (e.g. irons and a small amount of mains). If you have feedback on the numbers or perks please let me know. I am open to new perk ideas too.
+
+toggleable

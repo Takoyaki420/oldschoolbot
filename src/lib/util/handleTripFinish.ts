@@ -16,6 +16,7 @@ import { calculateBirdhouseDetails } from '../../mahoji/lib/abstracted_commands/
 import { canRunAutoContract } from '../../mahoji/lib/abstracted_commands/farmingContractCommand';
 import { handleTriggerShootingStar } from '../../mahoji/lib/abstracted_commands/shootingStarsCommand';
 import { updateClientGPTrackSetting, userStatsBankUpdate, userStatsUpdate } from '../../mahoji/mahojiSettings';
+import { burnieBurningOreTripEffect } from '../bso/burnie.js';
 import { PortentID, chargePortentIfHasCharges, getAllPortentCharges } from '../bso/divination';
 import { gods } from '../bso/divineDominion';
 import { MysteryBoxes } from '../bsoOpenables';
@@ -475,6 +476,35 @@ const tripFinishEffects: TripFinishEffect[] = [
 					itemsToRemove: cost
 				};
 			}
+		}
+	},
+	{
+		name: 'Burnie',
+		fn: async ({ data, user, messages, loot }) => {
+			if (!user.bank.has('Burnie') && !user.usingPet('Burnie')) return;
+			if (!user.bank.has('Coal') || !loot) return;
+			const burnieResult = burnieBurningOreTripEffect({
+				userOwnedBank: user.bank,
+				tripDuration: data.duration,
+				tripLoot: loot,
+				userSmithingLevel: user.skillLevel(SkillsEnum.Smithing)
+			});
+			console.log({ burnieResult });
+			if (!burnieResult) return;
+			await user.transactItems({
+				itemsToAdd: burnieResult.loot,
+				itemsToRemove: burnieResult.cost,
+				collectionLog: false
+			});
+			const xpRes = await user.addXP({
+				skillName: SkillsEnum.Smithing,
+				amount: burnieResult.smithingXpReceived,
+				duration: data.duration
+			});
+			messages.push(...burnieResult.messages);
+			messages.push(
+				`<:burnie:751035589952012298> Burnie smelted ${burnieResult.loot} for you, costing ${burnieResult.cost} ${xpRes}`
+			);
 		}
 	}
 ];

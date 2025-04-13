@@ -31,6 +31,8 @@ export const smithingTask: MinionTask = {
 		const loot = new Bank({
 			[smithedItem.id]: quantity * smithedItem.outputMultiple
 		});
+
+			rollBurnie({ smithingXpReceived: xpReceived, bank: loot, messages, totalSmithingXp: user.skillsAsXP.smithing });
 		let str = `${user}, ${user.minionName} finished smithing, you received ${loot}. ${xpRes}`;
 		if (hasBS) {
 			str += '\n**10%** Bonus XP For Blacksmith Outfit';

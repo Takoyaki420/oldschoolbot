@@ -129,6 +129,11 @@ export const smeltingCommand: OSBMahojiCommand = {
 			}
 		}
 
+		if (user.usingPet('Burnie')) {
+			boosts.push('10% boost for Burnie');
+			timeToSmithSingleBar *= 0.9;
+		}
+
 		const maxTripLength = calcMaxTripLength(user, 'Smithing');
 
 		// If no quantity provided, set it to the max.
