@@ -2,13 +2,13 @@
 title: "Solis"
 ---
 
-Ori works. Kill 1 boss at a time to get double loot every kill. Igne cannot kill.
+solo end-game boss, ori works, igne cannot kill.
 
 ### Requirements
+2500 Quest points, combatants cape, maxed igne tame including feeding it all items and having 2 gorajan igne gear equipped.
 
-You need a maxed igne tame to attempt kills at Solis. This includes feeding your tame all items and having 2 gorajan gear equipped.
-
-Uses heat res pots
+Uses heat res pots and needs very-good attack-stab melee gear
+(gorajan, drygore rapier, offhand spidergore rapier)
 
 ### Loot
 
