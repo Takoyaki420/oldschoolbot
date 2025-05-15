@@ -22,12 +22,10 @@ A single magic banana is consumed per catch and can be obtained by casting [[/ac
 
 **Mystery impling** (requires [[hunter:105]]): Drops a tradeable/untradeable/pet/equippable mystery box, can drop a Grandmaster clue, and has a 1 in 1 million chance of dropping another mystery impling jar.
 
-**Shrimpling** 
-
-Shrimpling's are a new impling that drop from activities in underwater/oceanic locations, which are: Drift net, underwater agility/thieving, DOA, fishing trawler, aerial fishing, ANY 
+**Shrimpling** : Drops from activities in underwater/oceanic locations, which are: Drift net, underwater agility/thieving, DOA, fishing trawler, aerial fishing, ANY 
 /fish
 
- fishing trip, camdozaal fishing, fishing contest. Shrimplings always drop raw food, and a chance of: Clue scroll (grandmaster)
+fishing trip, camdozaal fishing, fishing contest. Shrimplings always drop raw food, and a chance of: Clue scroll (grandmaster)
 Clue scroll (grandmaster), and Elder scroll piece
 
 You can view the collection log for implings with [[/cl name\:Implings]].
