@@ -4,7 +4,7 @@ title: "Implings"
 
 ## Implings
 
-On top of the regular implings you can get, there are 4 more you can get in BSO:
+On top of the regular implings you can get, there are 5 more you can get in BSO:
 
 **Infernal impling** (requires [[hunter:94]]): Drops TzHaar-related items, 1 in 1 million chance of Uncut onyx.
 
@@ -21,5 +21,13 @@ A single magic banana is consumed per catch and can be obtained by casting [[/ac
 **Eternal impling** (requires [[hunter:99]]): Drops magic-related items (staves, runes, orbs) and Grandmaster clues. 1 in 1 million chance of Eternal crystal. Eternal implings use magic to make themselves invisible to hide, thus you can only catch them if you have a Vasa cloak in your bank or equipped.
 
 **Mystery impling** (requires [[hunter:105]]): Drops a tradeable/untradeable/pet/equippable mystery box, can drop a Grandmaster clue, and has a 1 in 1 million chance of dropping another mystery impling jar.
+
+**Shrimpling** 
+
+Shrimpling's are a new impling that drop from activities in underwater/oceanic locations, which are: Drift net, underwater agility/thieving, DOA, fishing trawler, aerial fishing, ANY 
+/fish
+
+ fishing trip, camdozaal fishing, fishing contest. Shrimplings always drop raw food, and a chance of: Clue scroll (grandmaster)
+Clue scroll (grandmaster), and Elder scroll piece
 
 You can view the collection log for implings with [[/cl name\:Implings]].
